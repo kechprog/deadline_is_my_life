@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'top_bar.dart';
+
 
 void main() {
   // we create a object MyApp and pass it to func
@@ -7,20 +9,53 @@ void main() {
   runApp(const MyApp());
 }
 
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+
+      // main page
+      home: const Align(
+        alignment: Alignment.topCenter,
+        child: SizedBox(
+          height: 100,
+          child: TopBar(),
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+/*
+                  //////////////////////////
+                  ///  Example is below  ///
+                  //////////////////////////
+*/
+
+
 // this is basiclly class that holds *createState* function
-class MyApp extends StatefulWidget {
+class ExampleOfMainApp extends StatefulWidget {
 
   // this is __init__ but in this language
-  const MyApp(); // there is nothing there
+  const ExampleOfMainApp(); // there is nothing there
 
   // yes this one it is important one
   // it basically creates widget
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<ExampleOfMainApp> createState() => _ExampleOfMainAppState();
 }
 
 // Class for our app
-class _MyAppState<T extends StatefulWidget> extends State<T> {
+class _ExampleOfMainAppState<T extends StatefulWidget> extends State<T> {
 
   // 0 is default value
   int count = 0;
