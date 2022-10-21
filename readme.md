@@ -1,0 +1,1 @@
+setup.sh is only for unix like system idk what to do for windows
