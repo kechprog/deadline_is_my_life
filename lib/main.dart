@@ -1,6 +1,5 @@
 import 'package:deadline_is_my_life/login_page.dart';
 import 'package:flutter/material.dart';
-import 'main_page/main_page.dart';
 
 const theme = TextTheme(
   headline1: TextStyle(fontSize: 72.0, color: Colors.black),
