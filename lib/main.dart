@@ -1,3 +1,4 @@
+import 'package:deadline_is_my_life/login_page.dart';
 import 'package:flutter/material.dart';
 import 'main_page/main_page.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Georgia',
         textTheme: theme,
       ),                                               
-      home: MainPage(),
+      home: LoginPage(),
     );
   }
 }
