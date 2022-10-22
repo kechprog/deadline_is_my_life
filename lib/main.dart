@@ -1,6 +1,18 @@
 import 'package:flutter/material.dart';
 import 'top_bar.dart';
+import 'list_of_tasks.dart';
 
+/* TODO
+ *  make a list of tasks
+ *  fetchData with mock data
+ *  side bar ?
+ */
+
+const theme = TextTheme(
+  headline1: TextStyle(fontSize: 72.0, color: Colors.black),
+  headline6: TextStyle(fontSize: 36.0, color: Colors.black),
+  bodyText1: TextStyle(fontSize: 25.0, color: Colors.black), // list items
+);
 
 void main() {
   // we create a object MyApp and pass it to func
@@ -17,17 +29,31 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        brightness: Brightness.dark,
+        primaryColor: Colors.lightBlue[800],
+        fontFamily: 'Georgia',
+        textTheme: theme,
       ),
 
-      // main page
-      home: const Align(
+      /*        main page      */
+
+      // task (main part)                                                 
+      home: Align(
         alignment: Alignment.topCenter,
-        child: SizedBox(
-          height: 100,
-          child: TopBar(),
-        ),
+        child: Column(children: const [
+          TopBar(),
+          TaskList(),
+        ]),
       ),
+      
+      /* top bar */
+      // home: const Align(
+      //   alignment: Alignment.topCenter,
+      //   child: SizedBox(
+      //     height: 100,
+      //     child: TopBar(),
+      //   ),
+      // ),
     );
   }
 }
