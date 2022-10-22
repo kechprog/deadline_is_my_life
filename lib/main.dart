@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'top_bar.dart';
 import 'list_of_tasks.dart';
+import 'side_panel.dart';
 
 /* TODO
  *  make a list of tasks
@@ -14,12 +15,7 @@ const theme = TextTheme(
   bodyText1: TextStyle(fontSize: 25.0, color: Colors.black), // list items
 );
 
-void main() {
-  // we create a object MyApp and pass it to func
-  // new *ClassName*(*args*)
-  // is how we create an object
-  runApp(const MyApp());
-}
+void main() { runApp(const MyApp()); }
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -33,30 +29,32 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.lightBlue[800],
         fontFamily: 'Georgia',
         textTheme: theme,
-      ),
-
-      /*        main page      */
-
-      // task (main part)                                                 
-      home: Align(
-        alignment: Alignment.topCenter,
-        child: Column(children: const [
-          TopBar(),
-          TaskList(),
-        ]),
-      ),
-      
-      /* top bar */
-      // home: const Align(
-      //   alignment: Alignment.topCenter,
-      //   child: SizedBox(
-      //     height: 100,
-      //     child: TopBar(),
-      //   ),
-      // ),
+      ),                                               
+      home: MainPage(),
     );
   }
 }
+
+class MainPage extends StatefulWidget {
+  const MainPage({Key? key}) : super(key: key);
+
+  @override
+  _MainPageState createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      appBar: TopBar(),
+      body: TaskList(),
+      drawer: SidePanel(),
+    );
+  }
+}
+
+
 
 
 
