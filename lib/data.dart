@@ -1,8 +1,23 @@
-class TaskData {
-  List<DataEntry> data = [];
+class AppData {
+  static String login='', password='';
+  static final AppData _singleton = AppData._internal();
 
-  TaskData(){
-    data = [
+  factory AppData({String? login, String? password}) {
+    // first time
+    if (login != null && password != null) {
+      login = login;
+      password = password;
+      return _singleton;
+    } else { // get the singleton
+      assert(login != '' && password != '');
+      return _singleton;
+    }
+  }
+
+  AppData._internal();
+
+  List<DataEntry> getData(){
+    return [
       DataEntry(
         name: "taskName", 
         description: "taskDescription", 
@@ -43,13 +58,8 @@ class TaskData {
         description: "taskDescription", 
         due: DateTime.parse("2022-10-21 22:04")
       ),
-    ];
+    ];;
   }
-
-  List<DataEntry> getData(){
-    return data;
-  }
-  
 }
 
 class DataEntry {

@@ -12,7 +12,7 @@ class _TaskListState extends State<TaskList> {
 
   @override
   Widget build(BuildContext context) {
-    var data = TaskData().getData();
+    var data = AppData().getData();
     var taskList = data.map((task) => Task(
       name: task.name,
       description: task.description,

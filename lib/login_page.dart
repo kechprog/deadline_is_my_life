@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'main_page/main_page.dart';
+import 'data.dart';
 
 /* TODO
  * Register page
@@ -20,8 +22,14 @@ class _LoginPageState extends State<LoginPage> {
     if (login == '' || password == '') {
       print("Error: login or password is empty");
     }
-    else {
-      print("Login: $login, password: $password");
+    else {   
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => MainPage(
+          login: login,
+          password: password,
+        )),
+      );
     }
   }
 
