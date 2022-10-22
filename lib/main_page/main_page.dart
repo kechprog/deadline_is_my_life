@@ -1,6 +1,6 @@
 import 'package:deadline_is_my_life/data.dart';
 import 'package:flutter/material.dart';
-import 'list_of_tasks.dart';
+import 'list_of_tasks/task_list.dart';
 import 'side_panel.dart';
 import 'top_bar.dart';
 
