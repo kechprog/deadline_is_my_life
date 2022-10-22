@@ -58,7 +58,7 @@ class AppData {
         description: "taskDescription", 
         due: DateTime.parse("2022-10-21 22:04")
       ),
-    ];;
+    ];
   }
 }
 

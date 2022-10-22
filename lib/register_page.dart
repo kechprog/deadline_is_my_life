@@ -1,36 +1,26 @@
-import 'package:deadline_is_my_life/register_page.dart';
 import 'package:flutter/material.dart';
+
 import 'main_page/main_page.dart';
-import 'data.dart';
 
-/* TODO
- * Register page
- * Error handling
- */
-
-class LoginPage extends StatefulWidget {
-  LoginPage({Key? key}) : super(key: key);
+class RegisterPage extends StatefulWidget {
+  RegisterPage({Key? key}) : super(key: key);
 
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  _LoginPageState({Key? key});
+class _RegisterPageState extends State<RegisterPage> {
+  _RegisterPageState({Key? key});
   String login = '', password = '';
 
-  void goToMainPage() {
+  void registerAndLogin() {
     if (login == '' || password == '') {
       print("Error: login or password is empty");
     }
     else {   
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => MainPage(
-          login: login,
-          password: password,
-        )),
-      );
+      print("sending shit to server");
+      // going back to login page
+      Navigator.pop(context);
     }
   }
 
@@ -61,21 +51,10 @@ class _LoginPageState extends State<LoginPage> {
         ),
         const Padding(padding: EdgeInsets.all(10.0)),
         ElevatedButton(
-          onPressed: goToMainPage,
-          child: const Text('Login'),
-        ),
-        const Padding(padding: EdgeInsets.all(10.0)),
-        ElevatedButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => RegisterPage()),
-            );
-          },
+          onPressed: registerAndLogin,
           child: const Text('Register'),
         ),
       ]),
     );
   }
-
 }
