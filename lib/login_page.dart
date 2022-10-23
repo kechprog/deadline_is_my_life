@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
       appBar: AppBar(title: Text("DIMS")),
       body: Column(children: [
         const Padding(padding: EdgeInsets.all(10.0)),
-        TextField(
+        TextField( // поля ввода логина 
           decoration: const InputDecoration(
             border: OutlineInputBorder(),
             labelText: 'Login',
@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
           },
         ),
         const Padding(padding: EdgeInsets.all(10.0)),
-        TextField(
+        TextField( // password
           decoration: const InputDecoration(
             border: OutlineInputBorder(),
             labelText: 'Password',
