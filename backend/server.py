@@ -2,13 +2,6 @@ import fastapi
 import json
 from typing import List, Dict, Optional, Tuple
 
-# required this.name, 
-# required this.description, 
-# required this.due, 
-# required this.id, 
-# required this.checkpointNames, 
-# required this.checkpointDescriptions
-
 class Task:
     def __init__(
         self,
@@ -68,7 +61,7 @@ class DB:
         return None
     
     def get_all(self):
-        return json.dumps([u.as_json() for u in self.users])
+        return json.dumps('['+''.join([f'{u.as_json()},' for u in self.users])+']'.replace('/', ''))
 
     def add_user(self, user_login: str, password: str, tasks: Optional[Task]):
         self.users.append(User(user_login, password, tasks))
